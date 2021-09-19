@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KITOB.UZ</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KITOB.UZ</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Bosh sahifa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Kitoblar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mualliflar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Nashriyotlar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section class="intro">
+    <div class="container wrapper">
+      <h1>Kitoblar do`koni Admin paneli</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit quia possimus laudantium quos vitae sunt dolor
+        eum
+        repellendus id reiciendis nobis, aliquid, inventore, labore voluptatibus eveniet odit repudiandae veniam harum
+        impedit veritatis quis. Nulla doloremque, quisquam nemo nisi a, amet sed fugit rem laboriosam totam ratione
+        aperiam unde tempore? Fuga possimus sapiente libero excepturi sint sequi unde praesentium quas similique dolore
+        reprehenderit aperiam, aut nam cum molestias laudantium ut doloremque nihil neque. Quas, tenetur vel.</p>
+    </div>
+  </section>
+  <section class="content">
+    <div class="container">
+      <div class="content__wrapper">
+        <h3>Yangi kitob qo`shish</h3>
+        <form class="form-add" action="https://echo.htmlacademy.ru">
+          <div class="mb-3">
+            <label class="form-label" for="input-book-name-id">Kitob nomini kiriting</label>
+            <input class="form-control input-name-js" type="text" id="input-book-name-id"
+              aria-describedby="book-name-Help" required>
+            <div class="form-text message-js" id="book-name-Help">Kitob nomini lotin yozuvida kiriting</div>
+          </div>
+          <!-- <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div> -->
+          <button class="btn btn-primary" type="submit">Qo`shish</button>
+        </form>
+      </div>
+    </div>
+    <hr>
+    <div class="container">
+      <div class="list-wrapper">
+        <h3>Kitoblar ro`yxati</h3>
+        <ul class="book-list">
+
+        </ul>
+        <button class="btn btn-danger mt-2 delete-btn" type="button" onclick="deleteItem()" disabled>O`chirish</button>
+        <button class="btn btn-success mt-2 sort-btn" type="button" onclick="sortItem()">Alifbo bo`yicha
+          tartiblash</button>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <h3>Bu footer</h3>
+    </div>
+  </footer>
+
+  <script src="js/my.js"></script>
+</body>
+
+</html>
