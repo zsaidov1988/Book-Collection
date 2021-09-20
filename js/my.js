@@ -19,7 +19,7 @@ let elSortBtn = document.querySelector('.sort-btn'); // Sort button
 const deleteItem = () => {
   let checkedItems = getCheckedItems(); // This function return array of checked checkboxes values 
   for (item of checkedItems) {
-    bookCollection.splice(item, 1); // Remove checked item from array of all books
+    bookCollection[item] = null;
   }
   isDeletedItem = true; // All checked items are deleted. There is no checked items
   refreshBookList(bookCollection); // Refresh book list (ul tag) according to array of all books
@@ -65,6 +65,10 @@ const refreshBookList = (bookArr = bookCollection) => {
   elBookList.innerHTML = ''; // clear <ul>Books list</ul> innerHTML
   let count = 0; // The variable need to generate value of checkboxes. This values match to indexes of bookCollection array
   for (book of bookArr) {
+    if (book === null) {
+      count++;
+      continue;
+    }
     let listItem = document.createElement('li');
     if (isDel(values, count)) { // Is this book checked for deleting. Adds <del></del> tag to <label></label>: <label><del>Book name</del></label>
       listItem.innerHTML = `<input class="form-check-input" type="checkbox" name="books" id="checkBook${count}" value="${count}" onchange="refreshBookList()" checked>
