@@ -2,16 +2,21 @@
 //==============Variables=========================
 let bookCollection = ["Sarob", "Qismat", "Taqdir", "JS dasturchi", "Hello World", "Qoya"]; //Declare array of books with initial values
 let isDeletedItem = false; // This variable indicates is there checked items for deleting
+let isNotFoundBook = false;
 
 
 //================Elements=====================
 
 let elFormAdd = document.querySelector('.form-add'); // Form for adding new books
 let elBookName = elFormAdd.querySelector('.input-name-js'); // Input for new book name
+let elCheck = elFormAdd.querySelector('.check-js');
 let messageBox = elFormAdd.querySelector('.message-js'); // Element for caution when new book is already exists
 let elBookList = document.querySelector('.book-list'); // ul element for showing books list
 let elDeleteBtn = document.querySelector('.delete-btn'); // Delete button
 let elSortBtn = document.querySelector('.sort-btn'); // Sort button
+let elFormSearch = document.querySelector('.form-search');
+let elSearchInput = elFormSearch.querySelector('.input-search-js');
+let elSearchOutput = elFormSearch.querySelector('.output-js');
 
 //============Functions======================
 
@@ -28,7 +33,28 @@ const deleteItem = () => {
 // Function for sort button
 const sortItem = () => {
   bookCollection.sort(); // Sort array of all books
+  isDeletedItem = true;
   refreshBookList(bookCollection); // Refresh book list (ul tag) according to array of all books
+}
+
+const search = () => {
+  let searchTextOrig = elSearchInput.value.trim();
+  let searchText = searchTextOrig.toLowerCase();
+  let resultTextArr = [];
+  for (book of bookCollection) {
+    if (book.toLowerCase().includes(searchText)) {
+      resultTextArr.push(book);
+    }
+  }
+  let resultText = resultTextArr.join(', ')
+  if (resultText === '') {
+    elSearchOutput.textContent = `"${searchTextOrig}" nomli kitob topilmadi. Kitobni qo'shish bo'limiga o'tish uchun Enter tugmasini bosing`;
+    isNotFoundBook = true;
+  }
+  else {
+    elSearchOutput.textContent = resultTextArr.join(', ');
+    isNotFoundBook = false;
+  }
 }
 
 // The function indicates "Is this item checked?". If checked return true. Else return false.
@@ -95,13 +121,15 @@ elFormAdd.addEventListener('submit', function (e) {
   let matchNameBook = true; // A name of new book doesn't match to names of existing books
   let newBookName = elBookName.value.trim(); // Variable for name of new book
   newBookName = `${newBookName[0].toUpperCase()}${newBookName.split('').slice(1).join('')}`; // Capitalize new book name
-  for (book of bookCollection) {
-    if (newBookName === book) {
-      matchNameBook = false; // A name of new book match to one of existing books name
-    }
+  if (bookCollection.indexOf(newBookName) > -1) {
+    matchNameBook = false; // A name of new book match to one of existing books name
   }
   if (matchNameBook) { // If name of new book doesn't match to names of existing books
-    bookCollection.push(newBookName); // add new book to array bookCollection
+    if (elCheck.checked) {
+      bookCollection.unshift(newBookName);
+    } else {
+      bookCollection.push(newBookName); // add new book to array bookCollection
+    }
     refreshBookList(bookCollection); // Update list of books (ul tag)
     elBookName.value = ''; // Clear input for book name
     messageBox.textContent = "Kitob nomini lotin yozuvida kiriting";
@@ -110,6 +138,16 @@ elFormAdd.addEventListener('submit', function (e) {
     messageBox.textContent = "Bunday kitob mavjud";
   }
   elBookName.focus();
+});
+
+elFormSearch.addEventListener('submit', function (e) {
+  e.preventDefault();
+  if (isNotFoundBook) {
+    elBookName.value = elSearchInput.value.trim();
+    elSearchInput.value = '';
+    elBookName.focus();
+    elSearchOutput.textContent = 'Yuqoridagi maydonga so`z kiriting';
+  }
 });
 
 

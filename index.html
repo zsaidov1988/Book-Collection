@@ -44,28 +44,54 @@
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit quia possimus laudantium quos vitae sunt dolor
         eum
         repellendus id reiciendis nobis, aliquid, inventore, labore voluptatibus eveniet odit repudiandae veniam harum
-        impedit veritatis quis. Nulla doloremque, quisquam nemo nisi a, amet sed fugit rem laboriosam totam ratione
-        aperiam unde tempore? Fuga possimus sapiente libero excepturi sint sequi unde praesentium quas similique dolore
-        reprehenderit aperiam, aut nam cum molestias laudantium ut doloremque nihil neque. Quas, tenetur vel.</p>
+        impedit veritatis quis. Quas, tenetur vel.</p>
     </div>
   </section>
   <section class="content">
     <div class="container">
       <div class="content__wrapper">
-        <h3>Yangi kitob qo`shish</h3>
-        <form class="form-add" action="https://echo.htmlacademy.ru">
-          <div class="mb-3">
-            <label class="form-label" for="input-book-name-id">Kitob nomini kiriting</label>
-            <input class="form-control input-name-js" type="text" id="input-book-name-id"
-              aria-describedby="book-name-Help" required>
-            <div class="form-text message-js" id="book-name-Help">Kitob nomini lotin yozuvida kiriting</div>
+        <div class="row">
+
+
+          <div class="col col-12 col-md-6">
+            <h3>Yangi kitob qo`shish</h3>
+            <form class="form-add" action="https://echo.htmlacademy.ru">
+              <div class="mb-3">
+                <label class="form-label" for="input-book-name-id">Kitob nomini kiriting</label>
+                <input class="form-control input-name-js" type="text" id="input-book-name-id"
+                  aria-describedby="book-name-Help" required>
+                <div class="form-text message-js" id="book-name-Help">Kitob nomini lotin yozuvida kiriting</div>
+              </div>
+              <div class="mb-3 form-check">
+                <input class="form-check-input check-js" type="checkbox" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Ro`yxatning boshiga qo`shish</label>
+              </div>
+              <button class="btn btn-primary" type="submit">Qo`shish</button>
+            </form>
           </div>
-          <!-- <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div> -->
-          <button class="btn btn-primary" type="submit">Qo`shish</button>
-        </form>
+
+
+          <div class="col col-12 col-md-6 mt-3 mt-md-0">
+            <h3>Ro`yxatdan izlash</h3>
+            <form class="form-search" action="https://echo.htmlacademy.ru">
+              <div class="mb-3">
+                <label class="form-label" for="input-book-name-search-id">Kitob nomini kiriting</label>
+                <input class="form-control input-search-js" type="text" id="input-book-name-search-id"
+                  aria-describedby="book-search-Help" oninput="search()" autocomplete="off" required>
+                <div class="form-text" id="book-search-Help">Kitob nomini lotin yozuvida kiriting</div>
+              </div>
+              <output class="output-js">Yuqoridagi maydonga so`z kiriting</output>
+              <!-- <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div> -->
+              <button class="btn btn-primary visually-hidden" type="submit">Izlash</button>
+            </form>
+          </div>
+
+
+        </div>
+
       </div>
     </div>
     <hr>
