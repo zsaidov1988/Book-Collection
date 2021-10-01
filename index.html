@@ -40,7 +40,7 @@
   </header>
   <section class="intro">
     <div class="container wrapper">
-      <h1>Kitoblar do`koni Admin paneli</h1>
+      <h1>Kitoblar do`koni Admin paneli by Zafar</h1>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit quia possimus laudantium quos vitae sunt dolor
         eum
         repellendus id reiciendis nobis, aliquid, inventore, labore voluptatibus eveniet odit repudiandae veniam harum
@@ -56,11 +56,22 @@
           <div class="col col-12 col-md-6">
             <h3>Yangi kitob qo`shish</h3>
             <form class="form-add" action="https://echo.htmlacademy.ru">
-              <div class="mb-3">
-                <label class="form-label" for="input-book-name-id">Kitob nomini kiriting</label>
-                <input class="form-control input-name-js" type="text" id="input-book-name-id"
-                  aria-describedby="book-name-Help" required>
-                <div class="form-text message-js" id="book-name-Help">Kitob nomini lotin yozuvida kiriting</div>
+              <div class="row mb-3">
+                <div class="col col-12 col-lg-8">
+                  <label class="form-label" for="input-book-name-id">Kitob nomini kiriting</label>
+                  <input class="form-control input-name-js" type="text" id="input-book-name-id"
+                    aria-describedby="book-name-Help" required>
+                  <div class="form-text message-js" id="book-name-Help">Kitob nomini lotin yozuvida kiriting</div>
+                </div>
+                <div class="col col-12 col-lg-4">
+                  <label class="form-label" for="select-adabiyot">Adabiyot turi</label>
+                  <select class="form-select select-adabiyot-js" aria-label="Default select example"
+                    id="select-adabiyot">
+                    <option value="0" selected>Bolalar adabiyoti</option>
+                    <option value="1">Kattalar adabiyoti</option>
+                    <option value="2">Jahon adabiyoti</option>
+                  </select>
+                </div>
               </div>
               <div class="mb-3 form-check">
                 <input class="form-check-input check-js" type="checkbox" id="exampleCheck1">
@@ -97,13 +108,24 @@
     <hr>
     <div class="container">
       <div class="list-wrapper">
-        <h3>Kitoblar ro`yxati</h3>
-        <ul class="book-list">
 
-        </ul>
-        <button class="btn btn-danger mt-2 delete-btn" type="button" onclick="deleteItem()" disabled>O`chirish</button>
-        <button class="btn btn-success mt-2 sort-btn" type="button" onclick="sortItem()">Alifbo bo`yicha
-          tartiblash</button>
+        <div class="row">
+          <div class="col col-12 col-md-6">
+            <h3>Kitoblar ro`yxati</h3>
+            <ul class="book-list">
+
+            </ul>
+            <button class="btn btn-danger mt-2 delete-btn" type="button" onclick="deleteItem()"
+              disabled>O`chirish</button>
+            <button class="btn btn-success mt-2 sort-btn" type="button" onclick="sortItem()">Alifbo bo`yicha
+              tartiblash</button>
+          </div>
+          <div class="col col-12 col-md-6 mt-3 mt-md-0">
+            <p class="js-long-title"></p>
+            <p class="js-short-title"></p>
+          </div>
+        </div>
+
 
       </div>
     </div>
@@ -115,6 +137,7 @@
     </div>
   </footer>
   <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <script src="./js/functions.js"></script>
   <script src="js/my.js"></script>
 </body>
 
