@@ -3,7 +3,7 @@
 //==============Variables=========================
 let titleLiter = ["Bolalar adabiyoti", "Kattalat adabiyoti", "Jahon adabiyoti"];
 let bookCollection = [
-  ["Sariq devni minib", "Zumrad va qimmat", "Ertaklar yaxshilikka yetaklar", "Yosh dasturchi", "Hello World", "Bola"],
+  ["Sariq devni minib", "Zumrad va qimmat", "Ertaklar yaxshilikka yetaklar", "Yosh dasturchi", "Hello World", "Bola", "Xola", "Lola"],
   ["Taqdir", "Nikoh", "Baxtli oila", "Algoritm"],
   ["Joniyat va jazo", "Telba", "Choliqushi"]
 ]; //Declare array of books with initial values
